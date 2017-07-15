@@ -1,16 +1,17 @@
 <canvas width="600" height="400"></canvas>
 
 <script>
+   var tela = document.querySelector('canvas');
+   var pincel = tela.getContext('2d');
 
    function desenhaQuadrado(x, y, color){
-      var tela = document.querySelector('canvas');
-      var pincel = tela.getContext('2d');
-
       pincel.fillStyle = color;
       pincel.fillRect(x, y, 50, 50);
+   }
+
+   function desenhaBorda(x, y, color){
       pincel.fillStroke = 'black';
       pincel.strokeRect(x, y, 50, 50);
-
    }
 
    /*
@@ -22,10 +23,10 @@
    }
    */
 
-   for(var x = 0; x < 600; x += 50){
+   for(var x = 0; x < 200; x += 50){
       desenhaQuadrado(x, 0, 'green');
+      desenhaBorda(x, 0, 'black');
    }
-
-
+   desenhaBorda(200, 0, 'black');
 
 </script>
